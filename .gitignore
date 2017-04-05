@@ -1,0 +1,9 @@
+#folders
+#example-folder/
+#example-folder/example-nested-folder
+
+#files
+#example.xml
+
+#extensions
+#*.exampleExtension
