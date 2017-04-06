@@ -104,39 +104,14 @@ public virtual with sharing class SObjectDomain
     public virtual void onBeforeInsert() { }
 
     /**
-     * Override this to perform processing during the before insert phase, this is called by the handleBeforeInsert method
-     **/
-    public virtual void onBeforeInsert(List<SObject> newRecords) { }
-
-    /**
      * Override this to perform processing during the before update phase, this is called by the handleBeforeUpdate method
      **/
     public virtual void onBeforeUpdate(Map<Id,SObject> existingRecords) { }
 
     /**
-     * Override this to perform processing during the before update phase, this is called by the handleBeforeUpdate method
-     **/
-    public virtual void onBeforeUpdate(List<SObject> oldRecords, List<SObject> updatedRecords, Map<ID, SObject> oldRecordsMap, Map<ID, SObject> newRecordsMap) { }
-
-    /**
      * Override this to perform processing during the before delete phase, this is called by the handleBeforeDelete method
      **/
     public virtual void onBeforeDelete() { }
-
-    /**
-     * Override this to perform processing during the before delete phase, this is called by the handleBeforeDelete method
-     **/
-    public virtual void onBeforeDelete(List<SObject> oldRecords) { }
-
-    /**
-     * Override this to perform processing during the after insert phase, this is called by the handleAfterInsert method
-     **/
-    public virtual void onAfterInsert(List<SObject> oldRecords, List<SObject> updatedRecords, Map<ID, SObject> oldRecordsMap, Map<ID, SObject> newRecordsMap) { }
-
-    /**
-     * Override this to perform processing during the after insert phase, this is called by the handleAfterInsert method
-     **/
-    public virtual void onAfterInsert(List<SObject> newRecordsMap) { }
 
     /**
      * Override this to perform processing during the after insert phase, this is called by the handleAfterInsert method
@@ -147,11 +122,6 @@ public virtual with sharing class SObjectDomain
      * Override this to perform processing during the after update phase, this is called by the handleAfterUpdate method
      **/
     public virtual void onAfterUpdate(Map<Id,SObject> existingRecords) { }
-
-    /**
-     * Override this to perform processing during the after insert phase, this is called by the handleAfterInsert method
-     **/
-    public virtual void onAfterUpdate(List<SObject> oldRecords, List<SObject> updatedRecords, Map<ID, SObject> oldRecordsMap, Map<ID, SObject> newRecordsMap) { }
 
     /**
      * Override this to perform processing during the after delete phase, this is called by the handleAfterDelete method
