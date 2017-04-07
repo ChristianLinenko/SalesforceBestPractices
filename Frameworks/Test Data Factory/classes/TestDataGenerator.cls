@@ -1,5 +1,6 @@
 /* the DEFAULT test data generator; all other test data generator type inherit from this base class */
-public virtual class TestDataGenerator implements ITestDataGenerator { 
+public virtual class TestDataGenerator implements ITestDataGenerator 
+{ 
 
 	public TestDataGenerator() {}
 	
@@ -11,8 +12,8 @@ public virtual class TestDataGenerator implements ITestDataGenerator {
         List<sObject> sObjectList = new List<sObject>();
         Boolean isNameWriteable = targetType.getDescribe().fields.getMap().get('Name') != NULL ? targetType.getDescribe().fields.getMap().get('Name').getDescribe().isUpdateable() : FALSE;
             
-            // TO DO: make this generic class smarter, by creating some sample data that can be used to fill in required fields; 
-            // for now, such requirements must be handled with specific generator for the object. 
+        // TODO: make this generic class smarter, by creating some sample data that can be used to fill in required fields; 
+        // for now, such requirements must be handled with specific generator for the object. 
         Id recordTypeId = recordTypeDeveloperName == NULL ? NULL : utilities.recordTypeIdByDeveloperName(recordTypeDeveloperName);
             
         for (Integer i = 0;i < numberOfRecords;i++) {            
@@ -29,8 +30,7 @@ public virtual class TestDataGenerator implements ITestDataGenerator {
     
     }
 
-// fulfilling interface requirements - in the default factory, we don't have seed values or dependencies
-
+    // fulfilling interface requirements - in the default factory, we don't have seed values or dependencies
     public virtual void createDependentObjects() {
         // this is empty in the generic version, as it will only be used when there is not a specific factory
 
