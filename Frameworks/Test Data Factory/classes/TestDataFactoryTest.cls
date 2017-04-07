@@ -44,16 +44,18 @@ private class TestDataFactoryTest {
 
     static testMethod void testObjectCreationByRecordType() {
 
-        List<SObject> testRecords = TestDataFactory.createRecords('Account',10,TRUE,'AccountHotelLead',NULL);
+        List<SObject> testRecords = TestDataFactory.createRecords('Account',10,TRUE,'testRecordTypeName',NULL);
         // this needs to be customized per org
+        // assert based on the record type of the record
     }
 
     static testMethod void testObjectCreationWithFieldMap() {
 
         Map<String,Object> testFieldValueMap = new Map<String,Object>();
-        testFieldValueMap.put('Number_of_rooms__c',100);
-        List<SObject> testAccounts = TestDataFactory.createRecords('Account',10,TRUE,'AccountHotelLead',testFieldValueMap);
-        System.assertEquals(100,testAccounts[0].get('Number_of_rooms__c'));
+        // set some custom field value here
+        // testFieldValueMap.put('Custom_Field__c',someValue);
+        List<SObject> testAccounts = TestDataFactory.createRecords('Account',10,TRUE,'testRecordTypeName',testFieldValueMap);
+        // assert custom field value is populated
 
     }
 
