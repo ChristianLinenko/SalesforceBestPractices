@@ -1,3 +1,3 @@
-# SalesforceBestPractices
+# Salesforce Best Practices
 
-Repo for packages you can install using ANT to use SFDC best practices.
+First and foremost welcome! Check out the [wiki](https://github.com/ChristianLinenko/SalesforceBestPractices/wiki) for more information.
