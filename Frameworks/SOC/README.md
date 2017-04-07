@@ -5,4 +5,4 @@
 **Extending the Framework** 
 1. Create new layers. Again 1 layer per object and plural names.
 
-Wiki: https://github.com/ChristianLinenko/SalesforceBestPractices/wiki/Seperation-of-Concerns
+**Wiki**: https://github.com/ChristianLinenko/SalesforceBestPractices/wiki/Seperation-of-Concerns
