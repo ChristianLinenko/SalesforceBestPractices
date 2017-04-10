@@ -5,6 +5,8 @@
         <members>TriggerFactory</members>
         <members>TriggerFactoryHandlerBase</members>
         <members>TriggerFactory_Test</members>
+        <members>TriggerOverridesSelector</members>
+        <members>TriggerOverridesSelector_Test</members>
         <name>ApexClass</name>
     </types>
     <types>
