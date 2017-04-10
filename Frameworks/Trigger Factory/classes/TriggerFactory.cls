@@ -1,10 +1,10 @@
 public with sharing class TriggerFactory {
-    /**  
-  * Class TriggerFactory  
-  * Used to instantiate and execute Trigger Handlers associated with sObjects.  
+    /**
+  * Class TriggerFactory
+  * Used to instantiate and execute Trigger Handlers associated with sObjects.
  */
 
-    //If we want to create/update objects in Test classes, we can use this flag to insert the core records without logic running on them, 
+    //If we want to create/update objects in Test classes, we can use this flag to insert the core records without logic running on them,
     //then change the flag back
     private static Map <String , Trigger_Overrides__c >triggerOverrides = new Map <String , Trigger_Overrides__c >();
     public static boolean bypassTrigger = false;
@@ -17,10 +17,8 @@ public with sharing class TriggerFactory {
         bypassTrigger = tos.bypassTrigger(sObjectName);
         System.debug('bypassTrigger: ' + bypassTrigger);
         if (!bypassTrigger) {
-            //[SC]
-            // Get a handler appropriate to the object being processed  
+            // Get a handler appropriate to the object being processed
             ITrigger handler = getHandler(Trigger.old, Trigger.new );
-            //[SC]
             execute(handler);
             //System.debug('Executing Handler for object: '+ sObjectName);
         }
@@ -28,10 +26,10 @@ public with sharing class TriggerFactory {
             //System.debug('NOT Executing Handler for object: '+ sObjectName);
         }
     }
-    //private static method to control the execution of the handler  
+    //private static method to control the execution of the handler
     private static void execute(ITrigger handler) {
         if (Trigger.isBefore) {
-            // Call the bulk before to handle any caching of data and enable bulkification 
+            // Call the bulk before to handle any caching of data and enable bulkification
             handler.BulkBefore();
             // Call the beforeDelete method of the handler
             if (Trigger.isDelete) {
@@ -47,7 +45,7 @@ public with sharing class TriggerFactory {
             }
         }
         else if (Trigger.isAfter) {
-            // Call the bulk before to handle any caching of data and enable bulkification 
+            // Call the bulk before to handle any caching of data and enable bulkification
             handler.BulkAfter();
             // Call the afterDelete method of the handler
             if (Trigger.isDelete) {
@@ -71,14 +69,14 @@ public with sharing class TriggerFactory {
     @testVisible // For this to work on any trigger you create your handler class must be the object name
     // underscores removed with _TriggerHandler appended on the end of the name
     // Example:
-    // Object Name: Account_Group__c
-    // Handler class name: AccountGroup_TriggerHandler
+    // Object Name: Custom_Object__c
+    // Handler class name: CustomObject_TriggerHandler
     private static ITrigger getHandler(List<sObject> oldList, List<sObject> newList) {
 
         ITrigger handler = null;
 
         /* Truncate the sObject name to 25 characters because the max class length
-         is 40 characters, and sObjectName + '_TriggerHandler' length = 40 if 
+         is 40 characters, and sObjectName + '_TriggerHandler' length = 40 if
          the object name length is 25 or longer. */
         if (sObjectName != null && sObjectName.length() > 25) sObjectName = sObjectName.left(25);
 
