@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This is a custom setting list that will enable users to switch on or off whether the batch classes can or can&apos;t chain themselves together.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>BatchSize__c</fullName>
+        <defaultValue>200</defaultValue>
+        <externalId>false</externalId>
+        <label>Batch Size</label>
+        <precision>3</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Chain_Together_Batches__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>If this is checked, it will chain together batches.</description>
+        <externalId>false</externalId>
+        <label>Chain Together Batches</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Helper_Name__c</fullName>
+        <description>The name of the Batch Helper class name.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The name of the Batch Helper class name.</inlineHelpText>
+        <label>Helper Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>Batch Apex Governors</label>
+    <visibility>Public</visibility>
+</CustomObject>
