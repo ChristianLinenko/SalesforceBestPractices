@@ -18,13 +18,13 @@ public with sharing class BatchApexHelper
 	public static IBatchHelper getBatchHelper(String batchHelperName)
 	{
 		IBatchHelper batchHelper = null;
-    	Type t = Type.forName(batchHelperName + (batchHelperName.containsIgnoreCase('BatchHelper') ? '' : 'BatchHelper'));
-        if (t == null) {
-            //create instance of the default class
-            t = Type.forName('BatchHelperBase');
-        }
-        batchHelper = (IBatchHelper)t.newInstance();
-        return batchHelper;
+  	Type t = Type.forName(batchHelperName + (batchHelperName.containsIgnoreCase('BatchHelper') ? '' : 'BatchHelper'));
+    if (t == null) {
+        //create instance of the default class
+        t = Type.forName('BatchHelperBase');
+    }
+    batchHelper = (IBatchHelper)t.newInstance();
+    return batchHelper;
 	}
 
 	public static void startJob(String batchHelperName)

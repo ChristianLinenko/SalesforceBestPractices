@@ -7,4 +7,4 @@
 2. Create a test class for your new helper class.
 3. Add new record to your Batch_Apex_Governors__c for your new helper derived class.
 
-**Wiki**: https://github.com/ChristianLinenko/SalesforceBestPractices/wiki/Flow-Factory
+**Wiki**: https://github.com/ChristianLinenko/SalesforceBestPractices/wiki/Batch-Apex-Helper
